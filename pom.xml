@@ -27,7 +27,6 @@
         <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/jacoco-report/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
         <allure-maven.version>2.11.2</allure-maven.version>
-        <formatter-maven-plugin.version>2.21.0</formatter-maven-plugin.version>
         <impsort-maven-plugin.version>1.7.0</impsort-maven-plugin.version>
         <checkstyle-maven-plugin.version>3.2.0</checkstyle-maven-plugin.version>
         <checkstyle.version>10.4</checkstyle.version>
@@ -109,27 +108,6 @@
     </dependencies>
     <build>
         <plugins>
-            <plugin>
-                <groupId>net.revelc.code.formatter</groupId>
-                <artifactId>formatter-maven-plugin</artifactId>
-                <version>${formatter-maven-plugin.version}</version>
-                <configuration>
-                    <configFile>eclipse-formatter-config.xml</configFile>
-                    <excludes>
-                        <exclude>**/*CatInstance.java</exclude>
-                        <exclude>**/*CatApplication.java</exclude>
-                    </excludes>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>format</id>
-                        <goals>
-                            <goal>format</goal>
-                        </goals>
-                        <phase>process-sources</phase>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>net.revelc.code</groupId>
                 <artifactId>impsort-maven-plugin</artifactId>
